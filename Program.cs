@@ -28,7 +28,8 @@ public class Program
             }
             else
             {
-                Console.WriteLine(Encoding.UTF8.GetString(decodedData));
+                var decodedText = Encoding.UTF8.GetString(decodedData);
+                Console.WriteLine($"Decoded Text: {decodedText}");
             }
             return;
         }

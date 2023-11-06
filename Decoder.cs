@@ -10,13 +10,13 @@ public class Decoder
 
         // extract the encoded bytes
         var (fileSize, offset) = ExtractFileSize(encodedData.DataSubchunk.Data, 0);
-        Console.WriteLine($"[INFO] file size: {fileSize}");
+        // Console.WriteLine($"[INFO] file size: {fileSize}");
         return ExtractBytes(encodedData.DataSubchunk.Data, offset, fileSize);
     }
 
     public static byte[] ExtractBytes(byte[] encodedData, int offset, int endIndex)
     {
-        Console.WriteLine("[INFO] Extracting bytes...");
+        // Console.WriteLine("[INFO] Extracting bytes...");
 
         var extractedBytes = new List<byte>();
 

@@ -36,8 +36,6 @@ public class Encoder
         if (bytesToEncode is null) throw new ArgumentNullException(nameof(bytesToEncode));
         if (audioBytes == null) throw new ArgumentNullException(nameof(audioBytes));
 
-        Console.WriteLine("[INFO] Encoding bytes...");
-
         return bytesToEncode
             .Aggregate(offset,
                 (current, byt) =>
@@ -48,7 +46,6 @@ public class Encoder
     {
         if (soundData is null) throw new ArgumentNullException(nameof(soundData));
 
-        // 01 01 10 10 <- start here
         for (var i = 0; i < 4; i++)
         {
             soundData[offset + i] = (byte) ((soundData[offset + i] & 0xfffc) | (byt & 3));
